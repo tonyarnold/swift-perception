@@ -1,5 +1,5 @@
 #if canImport(SwiftUI)
-  import SwiftUI
+  public import SwiftUI
 
   /// A view that perceives changes to perceptible models.
   ///
@@ -209,11 +209,10 @@
   }
 
   #if canImport(Charts)
-    import Charts
+    public import Charts
 
     @available(iOS 16, macOS 13, tvOS 16, watchOS 9, *)
     extension WithPerceptionTracking: ChartContent where Content: ChartContent {
-      @_disfavoredOverload
       public init(@ChartContentBuilder content: @escaping () -> Content) {
         self.init(content: content())
       }
@@ -221,7 +220,7 @@
   #endif
 
   #if canImport(MapKit)
-    import MapKit
+    public import MapKit
 
     @available(iOS 17, macOS 14, tvOS 17, watchOS 10, *)
     extension WithPerceptionTracking: MapContent where Content: MapContent {
